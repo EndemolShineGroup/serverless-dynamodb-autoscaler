@@ -27,8 +27,8 @@ const validateInput = (input: any): Promise<string> => {
     } else if (!input.service.custom.capacities) {
       return reject(errorMessage(OutputMessages.NO_AUTOSCALING_CONFIG));
     } else if (
-      input.service.custom.capacities &&
-      !isArray(input.service.custom.capacities) &&
+      (input.service.custom.capacities &&
+        !isArray(input.service.custom.capacities)) ||
       input.service.custom.capacities.length <= 0
     ) {
       return reject(errorMessage(OutputMessages.NO_AUTOSCALING_CONFIG));

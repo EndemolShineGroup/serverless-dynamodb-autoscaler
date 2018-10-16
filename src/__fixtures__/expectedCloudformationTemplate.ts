@@ -177,6 +177,68 @@ export const expectedTemplate: string = `{
                     {
                       "TargetValue": 40,
                       "ScaleInCooldown": 60,
+                      "ScaleOutCooldown": 75,
+                      "PredefinedScalingMetricSpecification": {
+                        "PredefinedScalingMetricType": "DynamoDBWriteCapacityUtilization"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "ServiceNamespace": "dynamodb",
+                  "ResourceId": {
+                    "Fn::Join": [
+                      "",
+                      [
+                        "table/",
+                        {
+                          "Ref": "Table3"
+                        },
+                        "/index/",
+                        [
+                          "table3-index"
+                        ]
+                      ]
+                    ]
+                  },
+                  "MinCapacity": 1,
+                  "MaxCapacity": 5,
+                  "ScalableDimension": "dynamodb:table3-index:ReadCapacityUnits",
+                  "TargetTrackingConfigurations": [
+                    {
+                      "TargetValue": 20,
+                      "ScaleInCooldown": 60,
+                      "ScaleOutCooldown": 60,
+                      "PredefinedScalingMetricSpecification": {
+                        "PredefinedScalingMetricType": "DynamoDBReadCapacityUtilization"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "ServiceNamespace": "dynamodb",
+                  "ResourceId": {
+                    "Fn::Join": [
+                      "",
+                      [
+                        "table/",
+                        {
+                          "Ref": "Table3"
+                        },
+                        "/index/",
+                        [
+                          "table3-index"
+                        ]
+                      ]
+                    ]
+                  },
+                  "MinCapacity": 1,
+                  "MaxCapacity": 5,
+                  "ScalableDimension": "dynamodb:table3-index:WriteCapacityUnits",
+                  "TargetTrackingConfigurations": [
+                    {
+                      "TargetValue": 20,
+                      "ScaleInCooldown": 60,
                       "ScaleOutCooldown": 60,
                       "PredefinedScalingMetricSpecification": {
                         "PredefinedScalingMetricType": "DynamoDBWriteCapacityUtilization"
@@ -188,7 +250,8 @@ export const expectedTemplate: string = `{
             },
             "DependsOn": [
               "Table1",
-              "Table2"
+              "Table2",
+              "Table3"
             ]
           }
         }
@@ -223,7 +286,25 @@ export const expectedTemplate: string = `{
           "write": {
             "minimum": 4,
             "maximum": 20,
-            "usage": 0.4
+            "usage": 0.4,
+            "scaleOut": 75
+          }
+        },
+        {
+          "table": "Table3",
+          "indexOnly": true,
+          "index": [
+            "table3-index"
+          ],
+          "read": {
+            "minimum": 1,
+            "maximum": 5,
+            "usage": 0.2
+          },
+          "write": {
+            "minimum": 1,
+            "maximum": 5,
+            "usage": 0.2
           }
         }
       ]
