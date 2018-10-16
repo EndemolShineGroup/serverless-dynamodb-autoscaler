@@ -19,15 +19,16 @@ Serverless Plugin for Amazon DynamoDB Auto Scaling
 ## Installation
 
 ```bash
-yarn add @endemolshinegroup/serverless-dynamodb-autoscaler
+yarn add -D @endemolshinegroup/serverless-dynamodb-autoscaler
 ```
 
 ## Usage
 
-```typescript
-import Library from @endemolshinegroup/serverless-dynamodb-autoscaler;
+Add the plugin to your `serverless.yml`:
 
-const library = new Library();
+```yaml
+plugins:
+  - @endemolshinegroup/serverless-dynamodb-autoscaler
 ```
 
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/serverless-dynamodb-autoscaler.svg?longCache=true&style=flat-square
