@@ -1,0 +1,12 @@
+export const CLI_DONE: string = `Added DynamoDB Auto Scaling to CloudFormation!`;
+export const CLI_RESOURCE: string = ` - Building configuration for resource "table/%s%s"`;
+export const CLI_SKIP: string = `Skipping DynamoDB Auto Scaling => %s!`;
+export const CLI_START: string = `Configure DynamoDB Auto Scaling …`;
+export const INVALID_CONFIGURATION: string = `Invalid serverless configuration`;
+export const NO_AUTOSCALING_CONFIG: string = `Not Auto Scaling configuration found`;
+export const ONLY_AWS_SUPPORT: string = `Only supported for AWS provider`;
+export const SCALE_MUST_BE_INTEGER: string = `"ScaleIn" and "ScaleOut" must be integer`;
+export const USAGE_OUT_OF_BOUNDS: string = `"usage" must be a value between 0.2 and 0.8`;
+export const CAPACITY_OUT_OF_BOUNDS: string = `"minimum" must be greater than 0 and "maximum" must be 40000 or less`;
+export const INVALID_TARGET_CONFIG: string = `Invalid capacities configuration`;
+export const MUST_DEFINE_READ_OR_WRITE: string = `Missing definition for "write" and "read". At least 1 is needed`;
