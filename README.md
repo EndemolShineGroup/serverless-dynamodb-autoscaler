@@ -31,6 +31,28 @@ plugins:
   - @endemolshinegroup/serverless-dynamodb-autoscaler
 ```
 
+## Configuration
+
+Add a `capacities` property to your `serverless.yml`:
+
+```yaml
+custom:
+  capacities:
+    - table: CustomTable  # DynamoDB Resource
+      index:              # List or single index name
+        - custom-index-name
+      read:
+        minimum: 5        # Minimum read capacity
+        maximum: 1000     # Maximum read capacity
+        usage: 0.75       # Targeted usage percentage
+      write:
+        minimum: 40       # Minimum write capacity
+        maximum: 200      # Maximum write capacity
+        usage: 0.5        # Targeted usage percentage
+```
+
+Finish by running `sls deploy` and you're good to go!
+
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/serverless-dynamodb-autoscaler.svg?longCache=true&style=flat-square
 [link-license]: LICENSE
 [icon-npm]: https://img.shields.io/npm/v/@endemolshinegroup/serverless-dynamodb-autoscaler.svg?longCache=true&style=flat-square
