@@ -1,4 +1,4 @@
-# @endemolshinegroup/serverless-dynamodb-autoscaler
+![Banner][icon-banner]
 
 [![MIT Licensed][icon-license]][link-license]
 [![NPM Version][icon-npm]][link-npm]
@@ -14,7 +14,7 @@
 [![Semantic Release][icon-semantic-release]][link-semantic-release]
 [![Prettier][icon-prettier]][link-prettier]
 
-Serverless Plugin for Amazon DynamoDB Auto Scaling
+Autoscale DynamoDB resources with a single AWS AutoScalingPlan
 
 ## Installation
 
@@ -52,6 +52,8 @@ custom:
 ```
 
 Finish by running `sls deploy` and you're good to go!
+
+[icon-banner]: docs/assets/banner.png
 
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/serverless-dynamodb-autoscaler.svg?longCache=true&style=flat-square
 [link-license]: LICENSE
