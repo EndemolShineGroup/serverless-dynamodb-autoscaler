@@ -40,7 +40,7 @@
     "@endemolshinegroup/prettier-config": "^1",
     "@endemolshinegroup/tslint-config": "^1",
     "@semantic-release/changelog": "^3",
-    "@semantic-release/git": "^7",
+    "@semantic-release/git": "^9.0.0",
     "@types/jest": "^23",
     "@types/lodash": "^4.14.117",
     "@types/node": "^10",
