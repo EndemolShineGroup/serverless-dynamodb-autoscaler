@@ -29,7 +29,7 @@
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'"
   },
   "dependencies": {
-    "cloudform": "^3.3.0",
+    "cloudform": "^4.2.0",
     "lodash": "^4.17.11",
     "tslib": "^1.9.3"
   },
