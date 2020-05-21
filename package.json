@@ -43,7 +43,7 @@
     "@semantic-release/git": "^7",
     "@types/jest": "^23",
     "@types/lodash": "^4.14.117",
-    "@types/node": "^10",
+    "@types/node": "^14.0.5",
     "commitizen": "^3",
     "husky": "^1",
     "jest": "^23",
